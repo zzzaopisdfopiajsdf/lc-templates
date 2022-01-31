@@ -56,7 +56,8 @@ https://leetcode.com/problems/find-all-anagrams-in-a-string/
 ## Slow / Fast Pointer 
 
 ## BFS 
-
+- Make sure that we are not adding the same element back into the queue or there will be a recursive stack overflow
+- 
 ## DFS 
 
 ### DFS where we not including the same number in the output 
