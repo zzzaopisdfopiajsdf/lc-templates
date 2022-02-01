@@ -107,6 +107,33 @@ https://leetcode.com/problems/word-search/
                     
         return False 
 ```
+
+### Backtracking where we don't want the same combination with the same numbers
+[2,3,4] -> making sure that we are not outputting [2,3,2] and [3,2,2]
+```python
+    def combinationSum(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        
+        rtn = [] 
+        #candidates.sort()
+        def dfs(curr,curr_target,index):
+            print(curr)
+            if curr_target < 0: 
+                return 
+            elif curr_target == 0: 
+                rtn.append(curr[::])
+            else:
+                for c in range(index, len(candidates)): 
+                    dfs(curr+[candidates[c]], curr_target-candidates[c],c)
+        dfs([], target,0)
+        
+        return rtn 
+```
+
 ## Binary Search 
 Use-case: *For all Problems* 
 Resource: https://leetcode.com/discuss/general-discussion/786126/python-powerful-ultimate-binary-search-template-solved-many-problems
