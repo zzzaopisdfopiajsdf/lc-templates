@@ -1,5 +1,44 @@
 Designing a web crawler 
 
-Functional Requirements: 
+Feature Expectations 
+- 1) Use Cases: Google/Ahref Search bot, Flights scanner
 
-Non-Functional Requirements: 
+- 2) Scenarios which will not be covered:
+-> Specify with the interviewer what will be scraped. If we are only scraping text it will different than if we are scraping audio vs images vs videos. 
+-> Let's just assume for this example we will only be scraping text but the system should be extensible enough that we can scrape other media type in the future 
+
+- 3) Who will use? 
+-> Product team to display data to customers
+
+- 4) Usage pattern
+-> the web crawlers will be running at some interval, every hour, we will either give the bots some links to scrape or the bots will have to 
+traverse the links on the web-pages 
+        
+Measurements:  
+Throughput (QPS for read and write queries)
+Latency expected from the system (for read and write queries)
+Read/Write ratio
+Traffic estimates
+a. Storage estimates
+100Kb per page, 15 billion pages, which equates to 1.5 TB and since we don't want to go above 70% of our stoage capacity, we will need around 2.1 PB of storage 
+b. Memory estimates
+
+Design Goals: 
+Latency and Throughput requirements
+-> there will be high throughput because we are expecting the system to handle capacity to scan and process the entire WWW. 
+-> we are expecting to scan up to 1 billion pages, and within those pages, there may be other hyperlinks so the total amount of urls in our database could go up
+15 billion 
+
+Consistency vs Availability  [Weak/strong/eventual => consistency | Failover/replication => availability]
+
+High Level Design 
+(1) APIs for Read/Write scenarios for crucial components
+(2) Database schema
+(3) Basic algorithm
+(4) High level design for Read/Write scenario
+-> The high level flow will be that we will give the system a list of urls to scan, the scraper will take the url, go to the page, download all the content, 
+scrape it for the relevant metadata, in the case where we are traversing all the links, we will need to add the links to queue to be traversed as well. 
+-> there will be multiple microservices that help with our crawler, 
+1) Duplicate Service -> This will remove the duplicate content that may have already been scanned 
+2) HTML Fetcher -> This fetches the content from the page, this will feed content to the duplicate service and extractor service 
+3) Extractor -> Extracts the content that may be provided by the HTML Fetcher 
