@@ -10,3 +10,19 @@ Car, Truck, Bike that inherit certain properties from parent (vehicle).
 
 Polymorphism - object to take many form. For example, in a chess OOD we may have a Piece, now every Piece may have a move, but there may be different moves 
 based on the form (bishop, castle, knight). 
+
+
+## OO Analysis and Design
+
+The first step in object oriented design is identifiying the objects in the crtiera and coming up with the interaction between them. 
+The steps in OO can be descrbied as: 
+1. Identify the objects in a system 
+2. Define the relationship between the objects 
+3. Establish the interface of each object 
+4. Make design which can be converted to executabes using OO languages
+
+There are different ways to represent OO interactions. 
+1) Use Case Diagram - describe the set of user scenarios -> 
+2) Class Diagram - structure and behavior in the use cases, provides conceptual model of the system in terms of entites and their relationships 
+3) Activity Diagram - the funnctional flow of control between two or more class objects 
+4) Sequence Diagram - Used to describe interaction among classes in terms of exchagne of messages over time 
