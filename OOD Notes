@@ -1,0 +1,12 @@
+Encapsulation - binding the data together and hiding it from the outside world. This can be achieved by keeping state and functions private, thus the state 
+can only be accessed through public functions. 
+
+Abstraction - Natural extension of encapsulation. Hiding all but the relevant data about an object ot reduce the compelxity of the system. Basically keep it as a 
+need to know basis, the user does not need to know how the function will do it job, simply, it can kind of blindly assume that the operation will be performed. 
+Internal implmentations details of objects r hiden and only revealing operations that are relevant to other objects. 
+
+Inheritance - creating new classes from existing ones. Examples of this may be we have a parent class called Vehicles, we can have multiple children of Vehicles like 
+Car, Truck, Bike that inherit certain properties from parent (vehicle). 
+
+Polymorphism - object to take many form. For example, in a chess OOD we may have a Piece, now every Piece may have a move, but there may be different moves 
+based on the form (bishop, castle, knight). 
