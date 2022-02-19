@@ -1,0 +1,29 @@
+The first step will be to gather the requirements and goals of the system 
+
+
+Requirements/Goals: 
+-Users being able to add new product to sell 
+Users to search for product 
+User to search and view all product but will need to create acc to actually buy 
+Shopping cart - add,delete,edit 
+Rate and review prodcut 
+Specify the shipping address 
+cancel order if it has not been shipped 
+get notification 
+pay through crdit card 
+track shipment 
+
+Use-Case Diagram: (4 main actors in our system 
+1) Admin - adding and removing product categories, account management 
+Guest - will be able to view catalog, add/remove items, become registered members 
+Member - after they have registerd they will be able to place order and add products to sell 
+System - Sending notification, order and shipping update 
+
+Top Use Case - 
+Add/update product 
+Search for product 
+Add/remove product 
+checkout 
+make payment
+add new product category 
+system notification 
